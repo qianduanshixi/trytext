@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>外卖订餐</title>
+    <link rel="stylesheet" href="css/weui.css">
+    <link rel="stylesheet" href="css/weuix.css">
+    <script src="js/zepto.min.js"></script>
+    <script src="js/zepto.weui.js"></script>
+    <script>
+        $(function () {
+            $(document).on("click", "#btn", function () {
+                var user = $("#user").val();
+                if (user == "") {
+                    $.toptip("用户名不能为空");
+                    return false;
+                } else {
+                    $.toptip("提交成功", 'success');
+                }
+            })
+            //解决表单控件不能回弹 只有微信ios有这个问题
+            $("input,select,textarea").blur(function () {
+                setTimeout(() => {
+                    const scrollHeight = document.documentElement.scrollTop || document.body.scrollTop || 0;
+                    window.scrollTo(0, Math.max(scrollHeight - 1, 0));
+                }, 100);
+            })
+
+        });
+
+        var countdown = 60;
+
+        function settime(obj) {
+
+            var code = $(obj);
+            if (countdown == 0) {
+                code.removeAttr('disabled');
+                code.text("获取验证码");
+                countdown = 60;
+                return;
+            } else {
+                code.text("重新发送(" + countdown + ")");
+                code.attr('disabled', true);
+                countdown--;
+            }
+            setTimeout(function () {
+                settime(obj)
+            }, 1000);
+
+        }
+        getcode()
+        function getcode() {
+            $.get("/code?random=" + Math.random(), function (res) {
+                $("#code").attr("src", res.img);
+            }, 'json');
+
+        };
+
+        function textarea(input) {
+            var content = $(input);
+            var max = content.next().find('i').text();
+            var value = content.val();
+            if (value.length > 0) {
+
+                value = value.replace(/\n|\r/gi, "");
+                var len = value.length;
+                content.next().find('span').text(len);
+                if (len > max) {
+                    content.next().addClass('f-red');
+                } else {
+                    content.next().removeClass('f-red');
+                }
+            }
+        }
+
+        function cleartxt(obj) {
+            $(obj).prev().find('.weui-input').val("");
+            return false;
+        }
+
+        function cleararea(obj) {
+            $(obj).prev().find('.weui-textarea').val("").next().find("span").text(0);
+            return false;
+        }
+
+    </script>
+</head>
+
+<body>
+    <div class="page-hd tcenter">
+        <h3 class="class-hd-title">提交订单</h3>
+    </div>
+    <div class="weui-cell" style="margin-top: 20px;">
+        <div class="weui-cell__hd">
+            <label class="weui-label">用户名</label>
+        </div>
+        <div class="weui-cell__bd">
+            <input class="weui-input" placeholder="请输入用户名" type="text">
+        </div>
+
+    </div>
+    <div class="weui-cell">
+        <div class="weui-cell__hd">
+            <label class="weui-label">手机号</label>
+        </div>
+        <div class="weui-cell__bd">
+            <input class="weui-input" placeholder="请输入手机号" type="tel">
+        </div>
+
+    </div>
+    <div class="weui-cell weui-cell_vcode">
+        <div class="weui-cell__hd">
+            <label class="weui-label">验证码</label>
+        </div>
+        <div class="weui-cell__bd">
+            <input class="weui-input" placeholder="验证码" type="number">
+        </div>
+        <div class="weui-cell__ft">
+            <button class="weui-vcode-btn" onclick="settime(this)">获取验证码</button>
+        </div>
+    </div>
+
+    <div class="weui-cells">
+        <div class="weui-cell weui-cell_select">
+            <div class="weui-cell__hd">
+                <label for="" class="weui-label" style="margin-left: 15px">外卖方式</label>
+            </div>
+            <div class="weui-cell__bd">
+                <select class="weui-select" name="select1" style="padding-left: 0px;">
+                    <option selected="" value="1">食堂</option>
+                    <option value="2">天一阁</option>
+                    <option value="3">皖米苏</option>
+                </select>
+            </div>
+        </div>
+        <div class="weui-cell weui-cell_select">
+            <div class="weui-cell__hd">
+                <label for="" class="weui-label" style="margin-left: 15px">支付方式</label>
+            </div>
+            <div class="weui-cell__bd">
+                <select class="weui-select" name="select1" style="padding-left: 0px;">
+                    <option selected="" value="1">微信钱包</option>
+                    <option value="2">支付宝</option>
+                    <option value="3">银行卡</option>
+                </select>
+            </div>
+        </div>
+        <div class="weui-cell weui-cell_select weui-cell_select-after">
+            <div class="weui-cell__hd">
+                <label for="" class="weui-label">地区/南京</label>
+            </div>
+            <div class="weui-cell__bd">
+                <select class="weui-select" name="select2">
+                    <option value="1">江宁</option>
+                    <option value="2">浦口</option>
+                    <option value="3">玄武</option>
+                </select>
+            </div>
+        </div>
+        <div class="weui-cell">
+            <div class="weui-cell__hd">
+                <label class="weui-label">地址</label>
+            </div>
+            <div class="weui-cell__bd">
+                <input class="weui-input" placeholder="请输入地址" type="text">
+            </div>
+        </div>
+        <div class="weui-cell">
+            <div class="weui-cell__hd">
+                <label class="weui-label">备注</label>
+            </div>
+            <div class="weui-cell__bd">
+                <input class="weui-input" placeholder="个人备注" type="text">
+            </div>
+        </div>
+    </div>
+    <label for="weuiAgree" class="weui-agree">
+        <input id="weuiAgree" class="weui-agree__checkbox" type="checkbox">
+        <span class="weui-agree__text">
+            阅读并同意<a href="javascript:void(0);">《相关条款》</a>
+        </span>
+    </label>
+    <div class="weui-btn-area" style="margin-top: 50px;">
+        <a class="weui-btn weui-btn_primary" href="javascript:" id="btn">确定</a>
+    </div>
+    <div class="weui-footer weui-footer_fixed-bottom">
+        <p class="weui-footer__links">
+            <a href="newindex.html" class="weui-footer__link">返回主页</a>
+        </p>
+        <p class="weui-footer__text">Copyright © Yoby</p>
+    </div>
+
+
+
+
+
+
+</body>
+
+</html>

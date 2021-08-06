@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hb万和生活</title>
+    <link rel="stylesheet" href="./css/weui.css">
+    <link rel="stylesheet" href="./css/weuix.css">
+    <link rel="stylesheet" href="./图标库/font-awesome-4.7.0/css/font-awesome.min.css">
+    <script src="js/zepto.min.js"></script>
+    <script src="js/swipe.js"></script>
+    <script src="js/zepto.weui.js"></script>
+    <style>
+        .page-top {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 45px;
+            width: 100%;
+            /* overflow: hidden; */
+        }
+        .page-main {
+            position: absolute;
+            top: 45px;
+            bottom: 50px;
+            width: 100%;
+            overflow: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="page-bg"> 
+        <div class="page-top">
+            <div class="weui-header bg-white">
+                <h1 class="weui-header-title f-black">万和生活＋</h1>
+                <div class="weui-header-right f-orange">
+                    <span class="icon icon-53 f22"></span>
+                    <!-- 追加徽章 em代表当前字号的0.4倍的像素值，em和px关系可以设定，1em=14px-->
+                    <span class="weui-badge" style="position: absolute;top: -.9em;right: -.9em;">8</span>
+                   
+                </div>
+                   
+             </div>
+        </div>
+        <div class="page-main">
+         <!-- 首页 -->
+            <div class="page-bd">
+                <!-- 轮播图 -->
+                <div class="slide" id="slide1" style="height: 165px;">
+                    <ul>
+                        <li>
+                            <a href="javascript:;">
+                                <img src='u2.png' alt="" style="height: 165px;">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:;">
+                                <img src='u2.png' alt="" style="height: 165px;">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:;">
+                                <img src='u2.png' alt="" style="height: 165px;">
+                            </a>
+                        </li>
+                    </ul>
+                    <div class="dot">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+               <div class="weui-grids grids-small">
+                <a href="roomrepor.html" class="grid"  >
+                    <div class="weui-grid__icon">
+                        <i class="fa fa-university fa-2x" aria-hidden="true"></i>
+                    </div>
+                    <p class="weui-grid__label">
+                        公寓报修
+                    </p>
+                </a>
+                <a href="外卖点餐.html" class="grid"  >
+                    <div class="weui-grid__icon">
+                        <i class="fa fa-commenting  fa-2x" aria-hidden="true"></i>
+                    </div>
+                    <p class="weui-grid__label">
+                        外卖订餐
+                    </p>
+                </a>
+                <a href="form2 copy.html" class="grid"  >
+                    <div class="weui-grid__icon">
+                        <i class="fa fa-heartbeat fa-2x" aria-hidden="true"></i>
+                    </div>
+                    <p class="weui-grid__label">
+                        跑腿代买
+                    </p>
+                </a>
+                <a href="健康申报 (2).html" class="grid"  >
+                    <div class="weui-grid__icon">
+                        <i class="fa fa-bell-o fa-2x" aria-hidden="true"></i>
+                    </div>
+                    <p class="weui-grid__label">
+                        健康申报
+                    </p>
+                </a>
+               </div>
+    
+               <div class="weui-panel" style="padding-bottom: 50px;" id="tiezi">
+                <div class="weui-panel__hd">情报站</div>
+                <div class="weui-panel__bd">
+                    <div class="weui-media-box weui-media-box_text">
+                        <h4 class="weui-media-box__title">[重要通知]停水通知</h4>
+                        <!-- <p class="weui-media-box__desc">由各种物质组成的巨型球状天体，叫做星球。星球有一定的形状，有自己的运行轨道。</p> -->
+                        <ul class="weui-media-box__info">
+                            <li class="weui-media-box__info__meta">系统</li>
+                            <li class="weui-media-box__info__meta">2021.8.5</li>
+                            <!-- <li class="weui-media-box__info__meta weui-media-box__info__meta_extra">其它信息</li> -->
+                        </ul>
+                    </div>
+                </div>
+                <div class="weui-panel__bd">
+                    <div class="weui-media-box weui-media-box_text">
+                        <h4 class="weui-media-box__title">[重要通知]闫狗是真狗</h4>
+                        <ul class="weui-media-box__info">
+                            <li class="weui-media-box__info__meta">系统</li>
+                            <li class="weui-media-box__info__meta">2021.8.5</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="weui-panel__bd">
+                    <div class="weui-media-box weui-media-box_text">
+                        <h4 class="weui-media-box__title">[重要通知]许娟竟是女的！</h4>
+                        <!-- <p class="weui-media-box__desc">由各种物质组成的巨型球状天体，叫做星球。星球有一定的形状，有自己的运行轨道。</p> -->
+                        <ul class="weui-media-box__info">
+                            <li class="weui-media-box__info__meta">系统</li>
+                            <li class="weui-media-box__info__meta">2021.8.5</li>
+                            <!-- <li class="weui-media-box__info__meta weui-media-box__info__meta_extra">其它信息</li> -->
+                        </ul>
+                    </div>
+                </div>
+                <div class="weui-panel__bd">
+                    <div class="weui-media-box weui-media-box_text">
+                        <h4 class="weui-media-box__title">[重要通知]黄小飞-国内知名游戏黑洞</h4>
+                        <!-- <p class="weui-media-box__desc">由各种物质组成的巨型球状天体，叫做星球。星球有一定的形状，有自己的运行轨道。</p> -->
+                        <ul class="weui-media-box__info">
+                            <li class="weui-media-box__info__meta">系统</li>
+                            <li class="weui-media-box__info__meta">2021.8.5</li>
+                            <!-- <li class="weui-media-box__info__meta weui-media-box__info__meta_extra">其它信息</li> -->
+                        </ul>
+                    </div>
+                </div>
+                
+            </div>
+
+            </div>
+        <!-- 搜索 -->
+            <div class="page-bd" style="display: none;">
+            </div>
+        <!-- 发帖 -->
+            <div class="page-bd"  style="display: none;">
+                <h2 style="text-align: center;padding: 30px 0;">发帖交流</h2>
+            <div class="weui-cells">
+                <div class="weui-cell">
+                    <div class="weui-cell__bd">
+                        <input class="weui-input" placeholder="请输入发帖人姓名" type="text" style="font-size: 15px;" id="mingzi">
+                    </div>
+                </div>
+            </div>
+            <div class="weui-cells weui-cells_form">
+                <div class="weui-cell">
+                    <div class="weui-cell__bd">
+                            <textarea class="weui-textarea" placeholder="请输入发帖内容" rows="3" id="neirong"></textarea>
+                    </div>
+                </div>
+                <div class="weui-btn-area">
+                    <a class="weui-btn weui-btn_primary" href="javascript:" id="btn">发帖</a>
+                </div>
+            </div>
+            </div>
+         <!-- 个人中心 -->
+            <div class="page-bd"  style="display: none;">
+            </div>
+        </div>
+     <!-- 底部导航栏 -->
+     <div class="weui-taber">
+        <div class="weui-tabbar tab-bottom">
+            <a href="javascript:;" class="weui-tabbar__item">
+                    <span style="display: inline-block;position: relative;">
+                        <i class="icon icon-27 f27 weui-tabbar__icon"></i>
+                        <span class="weui-badge" style="position: absolute;top: -2px;right: -13px;" id="dibuanniu">0</span>
+                    </span>
+                <p class="weui-tabbar__label">首页</p>
+            </a>
+            <a href="javascript:;" class="weui-tabbar__item">
+                <span style="display: inline-block;position: relative;">
+                    <i class="icon icon-4 f27 weui-tabbar__icon"></i>
+                    <span class="weui-badge" style="position: absolute;top: -2px;right: -13px;" id="dibuanniu">0</span>
+                </span>
+            <p class="weui-tabbar__label">搜索</p>
+             </a>
+             <a href="javascript:;" class="weui-tabbar__item">
+                <span style="display: inline-block;position: relative;">
+                    <i class="icon icon-67 f27 weui-tabbar__icon"></i>
+                    <span class="weui-badge" style="position: absolute;top: -2px;right: -13px;" id="dibuanniu">0</span>
+                </span>
+            <p class="weui-tabbar__label">发帖</p>
+             </a>
+             <a href="javascript:;" class="weui-tabbar__item">
+                <span style="display: inline-block;position: relative;">
+                    <i class="icon icon-84 f27 weui-tabbar__icon"></i>
+                    <span class="weui-badge" style="position: absolute;top: -2px;right: -13px;" id="dibuanniu">0</span>
+                </span>
+            <p class="weui-tabbar__label">个人中心</p>
+             </a>
+        </div>
+    </div>
+    <script>
+        $(function(){
+            $('#slide1').swipeSlide({
+                autoSwipe:true,//自动切换默认是
+                speed:3000,//速度默认4000
+                continuousScroll:true,//默认否
+                transitionType:'cubic-bezier(0.22, 0.69, 0.72, 0.88)',//过渡动画linear/ease/ease-in/ease-out/ease-in-out/cubic-bezier
+                lazyLoad:true,//懒加载默认否
+                firstCallback : function(i,sum,me){
+                    me.find('.dot').children().first().addClass('cur');
+                },
+                callback : function(i,sum,me){
+                    me.find('.dot').children().eq(i).addClass('cur').siblings().removeClass('cur');
+                }
+            });  
+
+            function getTime() {
+            var time = new Date();
+            var h =time.getHours(); //h用来放时
+            h = h < 10? '0' + h:h;
+            var m = time.getMinutes();//m用来放分
+            m = m < 10 ?'0' +m :m;
+            var s = time.getSeconds();//s用来放秒
+            s= s<10?'0'+s:s;
+            return h + ':' + m + ':' + s;
+        }
+        $('.weui-tabbar__item span span').css("display","none");
+            $('.weui-tabbar__item').click(function(){
+                var index = $(this).index();
+                $('.page-bd').eq(index).css("display","block").siblings().css("display","none");
+                $('.weui-tabbar__item span span').eq(index).text(0);
+                $('.weui-tabbar__item span span').eq(index).css("display","none");
+            })
+
+            
+            $('#btn').click(function(){
+                if($('#neirong').val()==''||$('#mingzi').val()=='')
+                    return;
+                    else{
+                        var date = new Date();
+                        var newtiezi = $("<div class='weui-panel__bd'><div class='weui-media-box weui-media-box_text'><h4 class='weui-media-box__title'>[用户发帖]"+$('#neirong').val()+"</h4><ul class='weui-media-box__info'><li class='weui-media-box__info__meta'>"+$('#mingzi').val()+"</li><li class='weui-media-box__info__meta'>"+date.getFullYear()+"."+(date.getMonth()+1)+"."+date.getDate()+"    "+getTime()+"</li></ul></div></div>");
+                        $('#tiezi').append(newtiezi);
+                        $('#neirong').val('');
+                        $('#mingzi').val('');
+                        // $('.weui-badge').eq(0).text()=$('.weui-badge').eq(0).text()+1;
+                        var num=Number.parseInt($('.weui-tabbar__item span span').eq(0).text());
+                        console.log(num);
+                        $('.weui-tabbar__item span span').eq(0).text(num+1);
+                        $('.weui-tabbar__item span span').eq(0).css("display","block");
+                    }
+                
+            })
+        })
+    </script>
+</body>
+</html>
